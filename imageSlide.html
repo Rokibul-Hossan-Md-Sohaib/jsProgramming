@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <button onclick="prev()">Previous</button>
+
+        <img src="images/one.jpg" alt="" hight ="200" width="300" >
+
+        <button onclick="next()">Next</button>
+
+        <script>
+        
+            var images =["images/one.jpg", "images/two.jpg","images/three.jpg"]
+            var find = document.querySelector("img")
+            
+            var count=0
+            function next(){
+                count++
+                if (count>=images.length){
+                    count =0;
+                    find.src =images[count]
+                }
+                else{
+                    find.src =images[count]
+                }
+                
+            }
+
+            function prev(){
+                count--
+                if (count<0){
+                    count =images.length -1;
+                    find.src =images[count];
+                }
+                else{
+                    find.src =images[count]
+                }
+                
+            }
+            
+        </script>
+
+</body>
+</html>

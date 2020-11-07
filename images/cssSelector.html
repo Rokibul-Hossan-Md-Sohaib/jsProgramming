@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+  .pera-style{
+      color: red;
+      font-size: 3rem;
+      font-style: italic;
+  }
+</style>
+<body>
+    <p id="pera"> This Is an paragraph</p>
+    <button onclick="add()">Style Button</button>
+    <button onClick="remove()">Non Style Button</button>
+
+    <script>
+        function add(){
+         var text=   document.querySelector("#pera")
+         text.classList.add("pera-style")
+        }
+        function remove(){
+         var text=   document.querySelector("#pera")
+         text.classList.remove("pera-style")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //object and constructor
+function Student(name,age,cgpa){
+    this.name=name;
+    this.age=age;
+    this.cgpa=cgpa;
+
+    this.dis = function(){
+        console.log(this.name);
+        console.log(this.age);
+        console.log(this.cgpa);
+    }
+    
+    // this.main() = function(){
+    //     console.log(this.name)
+    //     console.log(this.age)
+    //     console.log(this.cgpa)
+
+    // }
+
+}
+
+var student1= new Student("Rokib", 24, 3.0);
+var student2= new Student("Rohan", 23, 3.5);
+var student3= new Student("Rizbi", 24, 3.0);
+
+// student1.main();
+student1.dis(name);
+
+
+    </script>
+</body>
+</html>
