@@ -11,12 +11,16 @@ button{
     width: 50px;
     height: 65px;
 }
+.anim{
+    box-shadow: 0 15px 18px 0 tomato;
+    opacity: 0.5;
+}
 
 </style>
 <body>
-    <button class="myBtn">a</button>
-    <button class="myBtn">b</button>
-    <button class="myBtn">c</button>
+    <button class="myBtn a">a</button>
+    <button class="myBtn b">b</button>
+    <button class="myBtn c">c</button>
 
     <script>
        // var len = document.querySelector("button").length
@@ -25,8 +29,17 @@ button{
                 var text =this.innerHTML;
                 console.log(text)
                 myAudio(text)
+                animation(text)
             })
         }
+
+        document.addEventListener("keypress",function(event){
+            var text =event.key;
+            myAudio(text);
+            animation(text);
+
+        })
+        
 
         function myAudio(text){
             switch(text){
@@ -37,16 +50,28 @@ button{
 
                 case "b":
                 var audio = new Audio("sound/sakira.mp3");
-                audio.play()
+                audio.play();
                 break;
 
                 case "c":
                 var audio = new Audio("sound/e.mp3");
-                audio.play()
+                audio.play();
                 break;
 
             }
         }
+
+        function animation(text){
+           var selectedButton= document.querySelector("."+text);
+           selectedButton.classList.add("anim");
+           
+           setTimeout(function(){
+               selectedButton.classList.remove("anim");
+           },1000);
+
+        }
+
+        
     </script>
 </body>
 </html>
